@@ -24,7 +24,7 @@ The layout was simulated inside Cisco Modeling Labs (CML) utilizing Cisco CSR100
 ### Verification Capture 1: CML Topology Workbench Map
 Below is the validated physical topology wiring layout map demonstrating clear logical separation and shared broadcast layer boundaries through the central core switch.
 
-(images/1_cml_topology_view.png)
+![1. CML Lab Workbench Topology](images/1_cml_topology_view.png)
 
 ---
 
