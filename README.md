@@ -55,12 +55,12 @@ Router-2(config-if)# no shutdown
 ### Verification Capture 2: Router-1 HSRP Status Summarization
 Execution of the verification sequence confirms Router-1 has successfully elected itself to the `Active` operational state, actively binding to the `192.168.1.1` VIP while tracking its standby peer at `192.168.1.3`.
 
-![2. Router-1 HSRP Standby Brief Output](images/2_router1_hsrp_brief.png)
+![2. Router-1 HSRP Standby Brief Output](2_router1_hsrp_brief.png)
 
 ### Verification Capture 3: Router-2 HSRP Status Summarization
 Execution of the verification sequence on the secondary cluster node confirms Router-2 recognizes Router-1 (`192.168.1.2`) as the active root and has safely entered the redundant `Standby` tracking mode.
 
-![3. Router-2 HSRP Standby Brief Output](images/3_router2_hsrp_brief.png)
+![3. Router-2 HSRP Standby Brief Output](3_router2_hsrp_brief.png)
 
 ---
 
