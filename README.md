@@ -97,7 +97,7 @@ The explicit `show vrrp brief` matrix output validates that Router-1 has assumed
 ### Verification Capture 7: Router-2 VRRP Backup Matrix Status
 The corresponding verification capture on Router-2 confirms it has settled into the standard **Backup** role at its default priority of `100`. It explicitly tracks the active path through the Master Address (`Master addr`) pointing back to Router-1's physical IP interface (`192.168.1.2`).
 
-![7. Router-2 VRRP Brief Output](images/7_router_vrrp_brief.png)
+![7. Router-2 VRRP Brief Output](images/7_router2_vrrp_brief.png)
 
 ---
 
