@@ -24,7 +24,7 @@ The layout was simulated inside Cisco Modeling Labs (CML) utilizing Cisco CSR100
 ### Verification Capture 1: CML Topology Workbench Map
 Below is the validated physical topology wiring layout map demonstrating clear logical separation and shared broadcast layer boundaries through the central core switch.
 
-![1. CML Lab Workbench Topology](1_cml_topology_view.png)
+![1. CML Lab Workbench Topology](images/1_cml_topology_view.png)
 
 ---
 
@@ -55,12 +55,12 @@ Router-2(config-if)# no shutdown
 ### Verification Capture 2: Router-1 HSRP Status Summarization
 Execution of the verification sequence confirms Router-1 has successfully elected itself to the `Active` operational state, actively binding to the `192.168.1.1` VIP while tracking its standby peer at `192.168.1.3`.
 
-![2. Router-1 HSRP Standby Brief Output](2_router1_hsrp_brief.png)
+![2. Router-1 HSRP Standby Brief Output](images/2_router1_hsrp_brief.png)
 
 ### Verification Capture 3: Router-2 HSRP Status Summarization
 Execution of the verification sequence on the secondary cluster node confirms Router-2 recognizes Router-1 (`192.168.1.2`) as the active root and has safely entered the redundant `Standby` tracking mode.
 
-![3. Router-2 HSRP Standby Brief Output](3_router2_hsrp_brief.png)
+![3. Router-2 HSRP Standby Brief Output](images/3_router2_hsrp_brief.png)
 
 ---
 
@@ -76,12 +76,12 @@ Once the interface tables cleared, the state transition engine settled seamlessl
 ### Verification Capture 4: Router-1 VRRP Transition Terminal Logs
 This console log shows the deletion of the legacy HSRP protocol, the subsequent duplicate address detection checks over the media access control layer, and the successful initialization of the open-standard VRRP engine.
 
-![4. Router-1 VRRP Transition Console Logs](4_router1_vrrp_transition.png)
+![4. Router-1 VRRP Transition Console Logs](images/4_router1_vrrp_transition.png)
 
 ### Verification Capture 5: Router-2 VRRP Transition Terminal Logs
 This console capture displays the corresponding cleanup configurations applied to the secondary node, documenting the immediate transition into its calculated backup monitoring state.
 
-![5. Router-2 VRRP Transition Console Logs](5_router2_vrrp_transition.png)
+![5. Router-2 VRRP Transition Console Logs](images/5_router2_vrrp_transition.png)
 
 ---
 
@@ -92,12 +92,12 @@ With the migration complete, the summary data matrix was pulled from both device
 ### Verification Capture 6: Router-1 VRRP Master Matrix Status
 The explicit `show vrrp brief` matrix output validates that Router-1 has assumed the standard **Master** role, actively protecting group ID `1` at an operational priority value of `110`.
 
-![6. Router-1 VRRP Brief Output](6_router1_vrrp_brief.png)
+![6. Router-1 VRRP Brief Output](images/6_router1_vrrp_brief.png)
 
 ### Verification Capture 7: Router-2 VRRP Backup Matrix Status
 The corresponding verification capture on Router-2 confirms it has settled into the standard **Backup** role at its default priority of `100`. It explicitly tracks the active path through the Master Address (`Master addr`) pointing back to Router-1's physical IP interface (`192.168.1.2`).
 
-![7. Router-2 VRRP Brief Output](7_router_vrrp_brief.png)
+![7. Router-2 VRRP Brief Output](images/7_router_vrrp_brief.png)
 
 ---
 
